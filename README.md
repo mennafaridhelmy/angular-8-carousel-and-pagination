@@ -1573,4 +1573,5 @@ In fact, this becomes a disadvantage when application restructuring is required.
 
 ---
 #   a n g u l a r - 8 - c a r o u s e l - a n d - p a g i n a t i o n  
+ #   t a s k - 1 - f r e e l a n c e  
  
