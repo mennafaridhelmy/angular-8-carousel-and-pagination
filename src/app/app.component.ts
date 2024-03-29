@@ -1,9 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { Component } from "@angular/core";
 import { PaginationValue } from "./components/pagination/pagination.component";
-
 export interface PaginatedResponse<T> {
   items: any;
+  total: number;
+}
+export interface carouselResponse<T> {
+  slides: any;
   total: number;
 }
 
@@ -633,13 +635,283 @@ export class AppComponent {
     );
 
     this.visibleItems = { items, total: this.items.length };
-    console.log('maslaaaaaaaaaaaaaaaaaan ngeeeeee7t');
   }
 
   // pagination end
 
+  // carousel start
 
-  // carousel start 
+  public carouselPagination = { page: 1, pageSize: 10 };
 
-  // carousel end 
+  slides = [
+    {
+      img: "https://via.placeholder.com/600.png/09f/fff",
+      title: "maslan1",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/021/fff",
+      title: "maslan2",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/321/fff",
+      title: "maslan3",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/422/fff",
+      title: "maslan4",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/654/fff",
+      title: "maslan5",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/09f/fff",
+      title: "maslan6",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/021/fff",
+      title: "maslan7",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/321/fff",
+      title: "maslan8",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/422/fff",
+      title: "maslan9",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/654/fff",
+      title: "maslan10",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/09f/fff",
+      title: "maslan11",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/021/fff",
+      title: "maslan12",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/321/fff",
+      title: "maslan13",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/422/fff",
+      title: "maslan14",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/654/fff",
+      title: "maslan15",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/09f/fff",
+      title: "maslan16",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/021/fff",
+      title: "maslan17",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/321/fff",
+      title: "maslan18",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/422/fff",
+      title: "maslan19",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/654/fff",
+      title: "maslan20",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/09f/fff",
+      title: "maslan21",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/021/fff",
+      title: "maslan22",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/321/fff",
+      title: "maslan23",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/422/fff",
+      title: "maslan24",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/654/fff",
+      title: "maslan25",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/09f/fff",
+      title: "maslan26",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/021/fff",
+      title: "maslan27",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/321/fff",
+      title: "maslan28",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/422/fff",
+      title: "maslan29",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/654/fff",
+      title: "maslan30",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/09f/fff",
+      title: "maslan31",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/021/fff",
+      title: "maslan32",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/321/fff",
+      title: "maslan33",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/422/fff",
+      title: "maslan34",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/654/fff",
+      title: "maslan35",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/09f/fff",
+      title: "maslan36",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/021/fff",
+      title: "maslan37",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/321/fff",
+      title: "maslan38",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/422/fff",
+      title: "maslan39",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/654/fff",
+      title: "maslan40",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/09f/fff",
+      title: "maslan41",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/021/fff",
+      title: "maslan42",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/321/fff",
+      title: "maslan43",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/422/fff",
+      title: "maslan44",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/654/fff",
+      title: "maslan45",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/09f/fff",
+      title: "maslan46",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/021/fff",
+      title: "maslan47",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/321/fff",
+      title: "maslan48",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/422/fff",
+      title: "maslan49",
+      description: "data description",
+    },
+    {
+      img: "https://via.placeholder.com/600.png/654/fff",
+      title: "maslan50",
+      description: "data description",
+    },
+  ];
+
+  public carouselItems: carouselResponse<number> = {
+    slides: this.slides.slice(0, 10),
+    total: this.slides.length,
+  };
+
+  public onCarouselChange(pagination: PaginationValue): void {
+    const startIndex = (pagination.page - 1) * pagination.pageSize;
+
+    let slides;
+    if (pagination.page <= 5) {
+      slides = this.slides.slice(startIndex, startIndex + pagination.pageSize);
+    } else {
+      slides = this.slides.slice(0, 10);
+      pagination.page = 1;
+    }
+
+    this.carouselItems = { slides, total: this.slides.length };
+  }
 }
